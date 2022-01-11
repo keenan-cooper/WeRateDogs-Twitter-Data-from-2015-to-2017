@@ -1,18 +1,25 @@
 # _WeRateDogs_ Twitter Data from 2015 to 2017
 ## Udacity - Data Analyst Nanodegree - Project 4 - Wrangle and Analyze Data
+# Table of Contents
 
+1. [Introduction](#introduction)
+2. [Project Overview](#project)
+3. [Requirements](#requirements)
+4. [Project Movitivation](#motivation)
+5. [Key Files](#files)
+6. [Results](#results)
+7. [Licensing, Authors, and Acknowledgements](#licensing)
 
-## Introduction
+## 1. Introduction<a id="introduction"></a>
 Real-world data rarely comes clean. Using Python and its libraries, I gathered data from a variety of sources and in a variety of formats, assessed its quality and tidiness, then cleaned it. This is called data wrangling. I documented my wrangling efforts in a Jupyter Notebook, then showcased them through analyses and visualizations using Python and its libraries.
 
 The dataset that I wrangled (and analyzing and visualizing) was the tweet archive of Twitter user @dog_rates, also known as WeRateDogs. WeRateDogs is a Twitter account that rates people's dogs with a humorous comment about the dog. These ratings almost always have a denominator of 10. The numerators, though? Almost always greater than 10. 11/10, 12/10, 13/10, etc. Why? Because "they're good dogs Brent." WeRateDogs has over 4 million followers and has received international media coverage.
 
 WeRateDogs downloaded their Twitter archive and sent it to Udacity via email to use in this project. This archive contains basic tweet data (tweet ID, timestamp, text, etc.) for all 5000+ of their tweets as they stood on August 1, 2017.
 
-WeRateDogs banner
-Image via Boston Magazine
+<img width="482" alt="WRD_twitter_banner" src="https://user-images.githubusercontent.com/68494141/148898814-5c45e176-f36e-4895-be21-9cde60124cd0.png">
 
-## Project Steps Overview
+## 2. Project Overview<a id="project"></a>
 Tasks in this project were as follows:
 
 * Step 1: Gathering data
@@ -24,37 +31,51 @@ Tasks in this project were as follows:
   - My data wrangling efforts
   - My data analyses and visualizations
 
-## Project Motivation
-## Context
+## 3. Requirements<a id="requirements"></a>
+
+This project was created in a Jupyter Notebook made available via Anaconda and written. The following versions of languages and libaries were used in making this project:
+- python==2.7.18
+- ipython==7.31.0
+- matplotlib==3.5.1
+- numpy==1.22.0
+- pandas==1.3.5
+- requests==2.27.1
+- scipy==1.7.3
+- seaborn==0.11.2
+- tweepy==4.4.0
+
+## 4. Project Motivation<a id="motivation"></a>
+
 The goal: wrangle WeRateDogs Twitter data to create interesting and trustworthy analyses and visualizations. The Twitter archive is great, but it only contains very basic tweet information. Additional gathering, then assessing and cleaning is required for "Wow!"-worthy analyses and visualizations.
 
-## The Data
-In this project, you will work on the following three datasets.
+The purpose of this Udacity project was to refine our data wrangling skills rather than deliver multple visualzations and tell a story or solve a problem. In other words, the journey was more important than the destination. 
 
-## Enhanced Twitter Archive
+## 5. Key Files<a id="files"></a>
+- `twitter_archive_enhanced.csv`\
+The WeRateDogs Twitter archive contains basic tweet data for all 5000+ of their tweets, but not everything. One column the archive does contain though: each tweet's text, which Udacity used to extract rating, dog name, and dog "stage" (i.e. doggo, floofer, pupper, and puppo) to make this Twitter archive "enhanced." Of the 5000+ tweets, only those tweets with ratings were filtered.
+The data was extracted programmatically by Udacity, but the data was left messy on purpose. The ratings aren't all correct. Same goes for the dog names and probably dog stages (see below for more information on these) too. I had to assess and clean these columns to use them for analysis and visualization.
 
-The WeRateDogs Twitter archive contains basic tweet data for all 5000+ of their tweets, but not everything. One column the archive does contain though: each tweet's text, which I used to extract rating, dog name, and dog "stage" (i.e. doggo, floofer, pupper, and puppo) to make this Twitter archive "enhanced." Of the 5000+ tweets, I have filtered for tweets with ratings only (there are 2356).
+- `tweet_json.txt`\
+Resulting data queried using Twitter's API. It was necessary to gather the retweet count and favorite count which were omitted from the basic `twitter_archive_enhanced.csv`. 
 
-The data was extracted programmatically by Udacity, but the data was left messy on purpose. The ratings aren't all correct. Same goes for the dog names and probably dog stages (see below for more information on these) too. I had need to assess and excessively clean these columns to use them for analysis and visualization.
+- `image-predictions.tsv`\
+Udacity ran every image in the WeRateDogs Twitter archive was through a neural network that can classify breeds of dogs. The results: a table full of image predictions (the top three only) alongside each tweet ID, image URL, and the image number that corresponded to the most confident prediction (numbered 1 to 4 since tweets can have up to four images).
 
-## Additional Data via the Twitter API 
+- `wrangle_act.ipynb`\
+This contains the bulk of the project. This notebook contains all code for gathering, assessing, cleaning, analyzing, and visualizing data.
 
-Back to the basic-ness of Twitter archives: retweet count and favorite count are two of the notable column omissions. Fortunately, this additional data can be gathered by anyone from Twitter's API. Well, "anyone" who has access to data for the 3000 most recent tweets, at least. But you, because you have the WeRateDogs Twitter archive and specifically the tweet IDs within it, can gather this data for all 5000+. And guess what? You're going to query Twitter's API to gather this valuable data.
+- `wrangle_report.pdf`\
+This was a report for documenting the data wrangling process: gather, assess, and clean.
 
-## Image Predictions File (image-predictions.tsv)
+- `act_report.pdf`\
+Documentation of analysis and insights
 
-One more cool thing: I ran every image in the WeRateDogs Twitter archive through a neural network that can classify breeds of dogs*. The results: a table full of image predictions (the top three only) alongside each tweet ID, image URL, and the image number that corresponded to the most confident prediction (numbered 1 to 4 since tweets can have up to four images).
-![image](https://user-images.githubusercontent.com/68494141/148789083-1c0f96f3-c488-4628-b452-634550c16e19.png)
-So for the last row in that table:
+- `twitter_archive_master.csv`\
+Cleaned and merged dataset containing data from the 3 source data sets
 
-- tweet_id is the last part of the tweet URL after "status/" → https://twitter.com/dog_rates/status/889531135344209921
-- p1 is the algorithm's #1 prediction for the image in the tweet → golden retriever
-- p1_conf is how confident the algorithm is in its #1 prediction → 95%
-- p1_dog is whether or not the #1 prediction is a breed of dog → TRUE
-- p2 is the algorithm's second most likely prediction → Labrador retriever
-- p2_conf is how confident the algorithm is in its #2 prediction → 1%
-- p2_dog is whether or not the #2 prediction is a breed of dog → TRUE
-etc.
-And the #1 prediction for the image in that tweet was spot on:
 
-![image](https://user-images.githubusercontent.com/68494141/148788950-7ba8a362-ec41-4ac7-8eb9-74f6683328f0.png)
+## 6. [Results](#results)
+As said in the project motivation, 
+
+## 7. [Licensing, Authors, and Acknowledgements](#licensing)
+All data provided and sourced by [Udacity](www.udacity.com). 
