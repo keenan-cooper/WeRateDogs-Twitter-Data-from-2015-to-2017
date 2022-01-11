@@ -15,14 +15,14 @@ Image via Boston Magazine
 ## Project Steps Overview
 Tasks in this project were as follows:
 
-Step 1: Gathering data
-Step 2: Assessing data
-Step 3: Cleaning data
-Step 4: Storing data
-Step 5: Analyzing, and visualizing data
-Step 6: Reporting
-- My data wrangling efforts
-- My data analyses and visualizations
+* Step 1: Gathering data
+* Step 2: Assessing data
+* Step 3: Cleaning data
+* Step 4: Storing data
+* Step 5: Analyzing, and visualizing data
+* Step 6: Reporting
+  - My data wrangling efforts
+  - My data analyses and visualizations
 
 ## Project Motivation
 ## Context
