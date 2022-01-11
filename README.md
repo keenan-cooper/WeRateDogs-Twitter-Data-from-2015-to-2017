@@ -33,7 +33,8 @@ Tasks in this project were as follows:
 
 ## 3. Requirements<a id="requirements"></a>
 
-This project was created in a Jupyter Notebook made available via Anaconda and written. The following versions of languages and libaries were used in making this project:
+This project was created in a Jupyter Notebook made available via Anaconda and written in python.\ 
+The following versions of languages and libraries were used in creating this project:
 - python==2.7.18
 - ipython==7.31.0
 - matplotlib==3.5.1
@@ -48,7 +49,7 @@ This project was created in a Jupyter Notebook made available via Anaconda and w
 
 The goal: wrangle WeRateDogs Twitter data to create interesting and trustworthy analyses and visualizations. The Twitter archive is great, but it only contains very basic tweet information. Additional gathering, then assessing and cleaning is required for "Wow!"-worthy analyses and visualizations.
 
-The purpose of this Udacity project was to refine our data wrangling skills rather than deliver multple visualzations and tell a story or solve a problem. In other words, the journey was more important than the destination. 
+The overall purpose of this Udacity project was to refine our data wrangling skills with secondary importance on delivering multiple polished visualzations and tell a story or solve a problem. In other words, the journey was more important than the destination. 
 
 ## 5. Key Files<a id="files"></a>
 - `twitter_archive_enhanced.csv`\
@@ -74,8 +75,18 @@ Documentation of analysis and insights
 Cleaned and merged dataset containing data from the 3 source data sets
 
 
-## 6. [Results](#results)
-As said in the project motivation, 
+## 6. Results<a id="results"></a>
+As said in the project motivation, the data wrangling process itself was more relevant than uncovering insights. At any rate, I was able to answer the following 4 questions:
+1. **What is the most retweeted tweet?**\
+From the data I had from 2015 to 2017, [this gem was the most retweeted tweet](https://twitter.com/dog_rates/status/744234799360020481).
+2. **What is the most common rating?**\
+12/10
+3. **What are the most common breeds found by the neural network?**\
+The top 5, from less to most common, were Pug, Chihuahua, Welsh Corgi, Labrador Retriever, then finally Golden Retriever. 
+4. **What is the average retweet count for each rating?**\
+<img width="605" alt="Screen Shot 2022-01-11 at 21 22 39" src="https://user-images.githubusercontent.com/68494141/148941805-da0b6ab3-cc4f-4eab-8ef4-55d1c06fa630.png">\
+I saw a general positive correlation between dog rating and retweet count (i.e. popularity). 13/10 and 14/10 tweets had the most retweets on average. 
+Further details of the results can be seen in the [`act_report.pdf`](https://github.com/keenan-cooper/WeRateDogs-Twitter-Data-from-2015-to-2017/blob/main/03_act_report.pdf) file.
 
-## 7. [Licensing, Authors, and Acknowledgements](#licensing)
-All data provided and sourced by [Udacity](www.udacity.com). 
+## 7. Licensing, Authors, and Acknowledgements<a id="licensing"></a>
+All data provided and sourced by [Udacity](https://www.udacity.com). 
