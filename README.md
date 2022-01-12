@@ -53,7 +53,7 @@ The goal: wrangle WeRateDogs Twitter data to create interesting and trustworthy 
 
 The overall purpose of this Udacity project was to refine our data wrangling skills. **Secondary** importance was placed on delivering multiple polished visualizations and telling a story and solving a problem. In other words, the journey was more important than the destination. 
 
-## 5. Key Files<a id="files"></a>
+### 5. Key Files<a id="files"></a>
 - `twitter_archive_enhanced.csv`\
 The WeRateDogs Twitter archive contains basic tweet data for all 5000+ of their tweets, but not everything. One column the archive does contain though: each tweet's text, which Udacity used to extract rating, dog name, and dog "stage" (i.e. doggo, floofer, pupper, and puppo) to make this Twitter archive "enhanced." Of the 5000+ tweets, only those tweets with ratings were filtered.
 The data was extracted programmatically by Udacity, but the data was left messy on purpose. The ratings aren't all correct. The same goes for the dog names and probably dog stages (see below for more information on these) too. I had to assess and clean these columns to use them for analysis and visualization.
